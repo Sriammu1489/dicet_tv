@@ -1,7 +1,6 @@
 pipeline {
-   agent {label 'dev'}
-   tools {maven 'maven'}
-
+    agent {label 'dev'}
+    tools {maven 'maven'}
 
     stages {
         stage('git') {
@@ -9,10 +8,9 @@ pipeline {
                 git 'https://github.com/Sriammu1489/dicet_tv.git'
             }
         }
-        stage('build') {
-            steps {
-                sh 'mvn clean pacakge'
+        stage('build')
+            steps{
+                sh 'mvn clean package'
             }
-        }
     }
 }
